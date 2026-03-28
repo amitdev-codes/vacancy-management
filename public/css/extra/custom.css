@@ -1,0 +1,90 @@
+table {
+    font-size: 14px;
+}
+
+thead {
+    background-color: #17a2b8 !important;
+    color: #fff;
+    font-weight: bold;
+}
+
+thead tr th a {
+    color: #fff !important;
+}
+
+.table thead>tr>th,
+.table tbody>tr>th,
+.table tfoot>tr>th,
+.table thead>tr>td,
+.table tbody>tr>td,
+.table tfoot>tr>td {
+    border: 1px solid #f8f9fa;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #008d4c;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    width: 100%
+}
+
+#land_area h4,
+#house_info h4,
+#land_reg h4,
+#kitta h4,
+#eval h4,
+#acquisition h4,
+#remarks h4,
+#status h4,
+#housekitta h4,
+#map h4,
+#floor h4,
+#floora h4,
+#houseeval h4,
+#houseother h4,
+#houseremarks h4,
+#housestatus h4,
+#floor_building h4,
+#floor_area h4,
+#floor_other h4,
+#floor_remarks h4,
+#floor_status h4,
+#personal_det h4,
+#perma_address h4,
+#temp_address h4,
+#contact h4,
+#identity h4,
+#perma_account h4,
+#main_box h4,
+#land_details h4 {
+    text-align: left;
+    /*color: #0067a7;*/
+    color: #008d4c;
+}
+
+h5 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #03c66d;
+    text-decoration: underline;
+    display: block;
+    text-align: left;
+    width: 100%
+}
+
+.table-responsive {
+    display: table;
+}
+
+@keyframes load {
+    0% {
+        width: 2%;
+    }
+
+    10% {
+        width: 10%;
+    }
+}

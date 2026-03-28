@@ -1,0 +1,47 @@
+.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 7px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+    font-weight: bold;
+    border-left: 6px solid #e3b64a;
+}
+
+.active,
+.accordion:hover {
+    background-color: #f0f9ff;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active1:after {
+    content: "\2212";
+}
+
+.panel-c {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.news {
+    background: #dadada;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border: 1px solid #cacaca;
+
+}

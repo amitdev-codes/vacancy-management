@@ -1,0 +1,36 @@
+@font-face { font-family: "Kalimati";
+src: url( fonts/Kalimati.ttf) format("truetype"); }
+body{  font-family: "Kalimati"; }
+
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.form-info {
+    text-align: center;
+}
+
+.notbold {
+    font-weight: normal
+}
+table.table,th{
+    text-align: center;
+}
+
+th,
+td {
+    line-height: 1.5;
+    padding: 5px;
+    text-align:left;
+}
+
+td b {
+    font-size: 16px;
+}
+h3{
+    font-size: 18px;
+}
+table#tokentbl td {border: none;}
+.headertop h3 {
+    line-height: 1.5;}

@@ -1,0 +1,1 @@
+$("<div class='form-group col-sm-12 header-group-0 group-separater' ><p style='margin-left:178px'>देवनागरीमा टाईप गर्न सहायता चाहिएमा <a href='https://www.google.com/intl/ne/inputtools/try/' target='_blank'>यहाँ क्लिक गर्नुहोस्</a></p></div>").insertBefore($("#form-group-title"));

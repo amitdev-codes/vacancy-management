@@ -1,0 +1,36 @@
+[{
+        "id": "1",
+        "code": "sen",
+        "name_en": "Seniority Details",
+        "name_np": "जेष्ठता विवरण",
+        "remarks": "-"
+    },
+    {
+        "id": "2",
+        "code": "geo",
+        "name_en": "Geographical Region Details",
+        "name_np": "भौगोलिक क्षेत्रमा काम गरको जिल्ला",
+        "remarks": "-"
+    },
+    {
+        "id": "3",
+        "code": "lea",
+        "name_en": "Leave Details",
+        "name_np": "बिदा लिएको विवरण",
+        "remarks": "-"
+    },
+    {
+        "id": "4",
+        "code": "edu",
+        "name_en": "Educational Qualification Details",
+        "name_np": "शैक्षिक योग्यताको विवरण1",
+        "remarks": "-"
+    },
+    {
+        "id": "5",
+        "code": "inc",
+        "name_en": "Office Incharge Details",
+        "name_np": "का.प्र.भई कार्यरत रहेको कार्यालय",
+        "remarks": "-"
+    }
+]

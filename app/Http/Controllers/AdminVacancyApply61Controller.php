@@ -1,0 +1,381 @@
+<?php namespace App\Http\Controllers;
+
+    use Session;
+    use Request;
+    use DB;
+    use CRUDBooster;
+
+class AdminVacancyApply61Controller extends BaseCBController
+{
+
+    public function cbInit()
+    {
+
+        # START CONFIGURATION DO NOT REMOVE THIS LINE
+        $this->title_field = "id";
+        $this->limit = "20";
+        $this->orderby = "id,desc";
+        $this->global_privilege = false;
+        $this->button_table_action = true;
+        $this->button_bulk_action = false;
+        $this->button_action_style = "button_icon";
+        $this->button_add = false;
+        $this->button_edit = false;
+        $this->button_delete = false;
+        $this->button_detail = true;
+        $this->button_show = false;
+        $this->button_filter = true;
+        $this->button_import = false;
+        $this->button_export = false;
+        $this->table = "vacancy_apply";
+        # END CONFIGURATION DO NOT REMOVE THIS LINE
+
+        # START COLUMNS DO NOT REMOVE THIS LINE
+        $this->col = [];
+        $this->col[] = ["label"=>"Post","name"=>"designation_id","join"=>"mst_designation,name_np"];
+        // $this->col[] = ["label"=>"Service","name"=>"(select count(favorite.id) from favorite where favorite.products_id = products.id) as total_favorite"];
+        $this->col[] = ["label"=>"Applied Date BS","name"=>"applied_date_bs"];
+        $this->col[] = ["label"=>"Token","name"=>"token_number"];
+        $this->col[] = ["label"=>"Amount","name"=>"total_amount"];
+
+        # END COLUMNS DO NOT REMOVE THIS LINE
+
+        # START FORM DO NOT REMOVE THIS LINE
+        $this->form = [];
+        $this->form[] = ['label'=>'Applicant Id','name'=>'applicant_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'applicant_profile,id'];
+        $this->form[] = ['label'=>'Vacancy Post Id','name'=>'vacancy_post_id','type'=>'text-c','readonly'=>'readonly','width'=>'col-sm-10','datatable'=>'vacancy_post,id'];
+        $this->form[] = ['label'=>'Designation Id','name'=>'designation_id','type'=>'select2-c','validation'=>'max:255','cmp-ratio'=>'12:12:6','datatable'=>'mst_designation,name_en'];
+        $this->form[] = ['label'=>'Applied Date Ad','name'=>'applied_date_ad','type'=>'date-c','validation'=>'date','cmp-ratio'=>'4:12:8'];
+        $this->form[] = ['label'=>'Applied Date Bs','name'=>'applied_date_bs','type'=>'date-n','validation'=>'min:1|max:255','cmp-ratio'=>'8:12:4'];
+        $this->form[] = ['label'=>' Female','name'=>'is_female','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'3:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>' Janajati','name'=>'is_janajati','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'3:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>' Madehsi','name'=>'is_madehsi','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'3:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>' Dalit','name'=>'is_dalit','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'3:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>' Handicapped','name'=>'is_handicapped','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'3:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>' Remote Village','name'=>'is_remote_village','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'9:6:6','dataenum'=>'1|Yes;0|NO'];
+        $this->form[] = ['label'=>'Amount For Job','name'=>'amount_for_job','type'=>'text-c','validation'=>'numeric','cmp-ratio'=>'4:12:6'];
+        $this->form[] = ['label'=>'Amount For Privilege Group','name'=>'amount_for_priv_grp','type'=>'text-c','validation'=>'numeric','cmp-ratio'=>'4:12:6'];
+        $this->form[] = ['label'=>'Total Amount','name'=>'total_amount','type'=>'text-c','validation'=>'numeric','cmp-ratio'=>'4:12:6'];
+        $this->form[] = ['label'=>'Token Number','name'=>'token_number','type'=>'number-c','validation'=>'required|numeric|min:1','cmp-ratio'=>'12:12:6'];
+        $this->form[] = ['label'=>' Application Confirmed','name'=>'is_application_confirmed','type'=>'radio-c','validation'=>'integer','cmp-ratio'=>'12:3:8','dataenum'=>'1|Yes;0|NO'];
+        // $this->form[] = ['label'=>'Amount For Submission Date Extension','name'=>'amount_for_extension','type'=>'text-c','validation'=>'numeric','cmp-ratio'=>'12:4:6'];
+        $this->form[] = ['label'=>'Age While Applying','name'=>'age_while_applying','type'=>'number','validation'=>'required|numeric|min:1|max:100','cmp-ratio'=>'12:12:6'];
+        # END FORM DO NOT REMOVE THIS LINE
+
+        # OLD START FORM
+        //$this->form = [];
+        //$this->form[] = ["label"=>"Vacancy Post Id","name"=>"vacancy_post_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"vacancy_post,id"];
+        //$this->form[] = ["label"=>"Applicant Id","name"=>"applicant_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"applicant,id"];
+        //$this->form[] = ["label"=>"Designation Id","name"=>"designation_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"designation,id"];
+        //$this->form[] = ["label"=>"Applied Date Ad","name"=>"applied_date_ad","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+        //$this->form[] = ["label"=>"Applied Date Bs","name"=>"applied_date_bs","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Is Female","name"=>"is_female","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Janajati","name"=>"is_janajati","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Madhesi","name"=>"is_madhesi","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Dalit","name"=>"is_dalit","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Handicapped","name"=>"is_handicapped","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Remote Village","name"=>"is_remote_village","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Is Application Confirmed","name"=>"is_application_confirmed","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Token Number","name"=>"token_number","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Amount For Job","name"=>"amount_for_job","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Amount For Priv Grp","name"=>"amount_for_priv_grp","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Amount For Extension","name"=>"amount_for_extension","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Total Amount","name"=>"total_amount","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Exam Date Ad","name"=>"exam_date_ad","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+        //$this->form[] = ["label"=>"Exam Date Bs","name"=>"exam_date_bs","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Is Exam Attended","name"=>"is_exam_attended","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Exam Roll No","name"=>"exam_roll_no","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Exam Center","name"=>"exam_center","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Exam Score","name"=>"exam_score","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Exam Passed","name"=>"exam_passed","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Interview Date Ad","name"=>"interview_date_ad","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+        //$this->form[] = ["label"=>"Interview Date Bs","name"=>"interview_date_bs","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Is Interview Attended","name"=>"is_interview_attended","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+        //$this->form[] = ["label"=>"Interview Roll No","name"=>"interview_roll_no","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Interview Center","name"=>"interview_center","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Interview Score","name"=>"interview_score","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Interview Passed","name"=>"interview_passed","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Padate Ad","name"=>"paid_date_ad","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+        //$this->form[] = ["label"=>"Padate Bs","name"=>"paid_date_bs","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+        //$this->form[] = ["label"=>"Pareceipt No","name"=>"paid_receipt_no","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        //$this->form[] = ["label"=>"Pareceipt Id","name"=>"paid_receipt_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"paid_receipt,id"];
+        //$this->form[] = ["label"=>"Age While Applying","name"=>"age_while_applying","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+        # OLD END FORM
+
+        /*
+        | ----------------------------------------------------------------------
+        | Sub Module
+        | ----------------------------------------------------------------------
+        | @label          = Label of action
+        | @path           = Path of sub module
+        | @foreign_key    = foreign key of sub table/module
+        | @button_color   = Bootstrap Class (primary,success,warning,danger)
+        | @button_icon    = Font Awesome Class
+        | @parent_columns = Sparate with comma, e.g : name,created_at
+        |
+        */
+        $this->sub_module = array();
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add More Action Button / Menu
+        | ----------------------------------------------------------------------
+        | @label       = Label of action
+        | @url         = Target URL, you can use field alias. e.g : [id], [name], [title], etc
+        | @icon        = Font awesome class icon. e.g : fa fa-bars
+        | @color       = Default is primary. (primary, warning, succecss, info)
+        | @showIf      = If condition when action show. Use field alias. e.g : [id] == 1
+        |
+        */
+        $this->addaction = array();
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add More Button Selected
+        | ----------------------------------------------------------------------
+        | @label       = Label of action
+        | @icon        = Icon from fontawesome
+        | @name        = Name of button
+        | Then about the action, you should code at actionButtonSelected method
+        |
+        */
+        $this->button_selected = array();
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add alert message to this module at overheader
+        | ----------------------------------------------------------------------
+        | @message = Text of message
+        | @type    = warning,success,danger,info
+        |
+        */
+        $this->alert        = array();
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add more button to header button
+        | ----------------------------------------------------------------------
+        | @label = Name of button
+        | @url   = URL Target
+        | @icon  = Icon from Awesome.
+        |
+        */
+        $this->index_button = array();
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Customize Table Row Color
+        | ----------------------------------------------------------------------
+        | @condition = If condition. You may use field alias. E.g : [id] == 1
+        | @color = Default is none. You can use bootstrap success,info,warning,danger,primary.
+        |
+        */
+        $this->table_row_color = array();
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | You may use this bellow array to add statistic at dashboard
+        | ----------------------------------------------------------------------
+        | @label, @count, @icon, @color
+        |
+        */
+        $this->index_statistic = array();
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add javascript at body
+        | ----------------------------------------------------------------------
+        | javascript code in the variable
+        | $this->script_js = "function() { ... }";
+        |
+        */
+        $this->script_js = null;
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Include HTML Code before index table
+        | ----------------------------------------------------------------------
+        | html code to display it before index table
+        | $this->pre_index_html = "<p>test</p>";
+        |
+        */
+        $this->pre_index_html = null;
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Include HTML Code after index table
+        | ----------------------------------------------------------------------
+        | html code to display it after index table
+        | $this->post_index_html = "<p>test</p>";
+        |
+        */
+        $this->post_index_html = null;
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Include Javascript File
+        | ----------------------------------------------------------------------
+        | URL of your javascript each array
+        | $this->load_js[] = asset("myfile.js");
+        |
+        */
+        $this->load_js = array();
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Add css style at body
+        | ----------------------------------------------------------------------
+        | css code in the variable
+        | $this->style_css = ".style{....}";
+        |
+        */
+        $this->style_css = null;
+
+
+
+        /*
+        | ----------------------------------------------------------------------
+        | Include css File
+        | ----------------------------------------------------------------------
+        | URL of your css each array
+        | $this->load_css[] = asset("myfile.css");
+        |
+        */
+        $this->load_css = array();
+    }
+
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for button selected
+    | ----------------------------------------------------------------------
+    | @id_selected = the id selected
+    | @button_name = the name of button
+    |
+    */
+    public function actionButtonSelected($id_selected, $button_name)
+    {
+        //Your code here
+    }
+
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for manipulate query of index result
+    | ----------------------------------------------------------------------
+    | @query = current sql query
+    |
+    */
+    public function hook_query_index(&$query)
+    {
+        $applicant_id =Session::get('applicant_id');
+        $query->where('applicant_id', $applicant_id);
+
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for manipulate row of index table html
+    | ----------------------------------------------------------------------
+    |
+    */
+    public function hook_row_index($column_index, &$column_value)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for manipulate data input before add data is execute
+    | ----------------------------------------------------------------------
+    | @arr
+    |
+    */
+    public function hook_before_add(&$postdata)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for execute command after add public static function called
+    | ----------------------------------------------------------------------
+    | @id = last insert id
+    |
+    */
+    public function hook_after_add($id)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for manipulate data input before update data is execute
+    | ----------------------------------------------------------------------
+    | @postdata = input post data
+    | @id       = current id
+    |
+    */
+    public function hook_before_edit(&$postdata, $id)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for execute command after edit public static function called
+    | ----------------------------------------------------------------------
+    | @id       = current id
+    |
+    */
+    public function hook_after_edit($id)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for execute command before delete public static function called
+    | ----------------------------------------------------------------------
+    | @id       = current id
+    |
+    */
+    public function hook_before_delete($id)
+    {
+        //Your code here
+    }
+
+    /*
+    | ----------------------------------------------------------------------
+    | Hook for execute command after delete public static function called
+    | ----------------------------------------------------------------------
+    | @id       = current id
+    |
+    */
+    public function hook_after_delete($id)
+    {
+        //Your code here
+    }
+
+
+
+    //By the way, you can still create your own method in here... :)
+}

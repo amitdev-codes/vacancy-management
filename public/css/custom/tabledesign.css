@@ -1,0 +1,87 @@
+th {
+    text-align: center;
+}
+
+thead {
+    background-color: #3B72A0 !important;
+    color: #fff;
+}
+
+tbody {
+    background-color: #d0d0d0;
+    color: black;
+}
+
+@font-face {
+    font-family: kalimati;
+    src: url('/fonts/kalimati.ttf');
+}
+
+.nepali_td {
+    font-family: kalimati;
+}
+
+#progressbar {
+    height: 22px;
+    width: 100%;
+    background: rgb(212 212 221 / 50%);
+    border-radius: 3px;
+}
+
+#loading {
+    transition: all 500ms ease;
+    height: 22px;
+    width: 100%;
+    border-radius: 3px;
+    background: #4fa75b;
+    position: relative;
+    display: flex;
+    animation: load 15s ease infinite;
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    color: white;
+    display: inline-block;
+
+}
+
+
+
+#khalti_progressbar {
+    height: 22px;
+    width: 100%;
+    background: rgb(212 212 221 / 50%);
+    border-radius: 3px;
+}
+
+#khalti_loading {
+    transition: all 500ms ease;
+    height: 22px;
+    width: 100%;
+    border-radius: 3px;
+    background: #a50dd3;
+    position: relative;
+    display: flex;
+    animation: load 15s ease infinite;
+}
+
+
+
+
+
+@keyframes load {
+    0% {
+        width: 2%;
+    }
+
+    10% {
+        width: 10%;
+    }
+}

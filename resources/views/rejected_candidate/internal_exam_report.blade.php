@@ -1,0 +1,227 @@
+@extends('crudbooster::admin_template')
+@section('content')
+<link href="{{asset('css/custom/tabledesign.css') }}" rel="stylesheet" type="text/css"/>
+
+@php
+ if($ad_id==0){
+	$combo_title='विज्ञापन';
+  }
+  else{
+	  foreach($adno_data as $ad)
+	  {
+		if($ad->id==$id)
+		{
+		  $combo_title=$ad->ad_title_en;
+		}
+	  }
+  }
+	
+@endphp
+
+<!-- Single button -->
+<div class="btn-group">
+ <button type="button" class="btn btn-primary dropdown-toggle nepali_td" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$combo_title}}
+	<span class="caret"></span> 
+	</button>
+	<ul class="dropdown-menu">
+		@if($adno_data) 
+		  @foreach($adno_data as $ad)
+		  <li><a class="dropdown-item nepali_td" href="{{route('rejected_candidatesGetdesignation',['id'=>$ad->id])}}">{{$ad->ad_title_en}}--{{$ad->opening_type}}</a></li>
+		 @endforeach
+	    @endif
+	</ul>
+</div>
+
+
+@php
+ if($md_id==0){
+	$combo_title_designation='पद';
+  }
+  else{
+	  foreach($designation_data as $key=>$md)
+	  {
+		if($md->id==$md_id)
+		{
+            $combo_title_designation_en=$md->designation_en;
+			$combo_title_designation_np=$md->designation_np;
+        }
+	  }
+  }
+@endphp
+
+
+
+
+
+
+<div class="btn-group">
+	<button type="button" class="btn btn-success dropdown-toggle nepali_td" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		{{$combo_title_designation_en}}--{{$combo_title_designation_np}}
+		<span class="caret"></span> 
+	</button>
+	<ul class="dropdown-menu">
+		@if($designation_data) 
+		@foreach($designation_data as $value)
+	<li>
+		<a class="dropdown-item" href="{{route('RejectedCandidatesGetCandidates',['ad_id'=>$vacancy_ad_id,'id'=>$value->id])}}">{{$value->designation_en}}-{{$value->designation_np}}</a>
+	</li>
+		@endforeach
+		 @endif
+	</ul>
+</div>
+
+
+
+<div class="btn-group">
+	@if($candidate_data)
+	<a href="/../admin/selected_candidates/export/{{request()->route('id')}}">
+		<button class="btn btn-primary">Export to Excel</button>
+	</a>
+	@endif
+</div>
+
+<div class="btn-group">
+	@if($candidate_data)
+	<a href="/../admin/selected_candidates/loksewaexport/{{request()->route('id')}}">
+		<button class="btn btn-warning">Export to Loksewa</button>
+	</a>
+	@endif
+</div>
+
+
+<style>
+	.heading-report {
+		text-align: -webkit-right;
+		margin-right: 45%;
+	}
+
+
+	h5 {
+		font-size: 19px;
+		font-weight: 700;
+	}
+
+	h6 {
+		line-height: 15px;
+		font-size: 14px !important;
+		font-weight: 600;
+	}
+
+	p {
+		text-align: center;
+		font-weight: 700;
+		font-size: 18px;
+	}
+</style>
+
+<link href="../../../css/rwd-table.min.css" rel="stylesheet">
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<header>
+	<div class="left header panel panel-primary nepali_td">
+		<div clas="panel-body">
+			<div class="heading-report">
+				<h5 class="nepali_td"><img src="{{asset('images/logo.png')}}" height="50px;" width="50px;" style="margin-right:20px;">नेपाल टेलिकम</h5>
+				<br>
+				<h5 style="margin-top: -35px; margin-right: -17px;" class="nepali_td">पदपूर्ति सचिवालय</h5>
+			
+			</div>
+			<h6 class="nepali_td">विज्ञापन: {{$intro_data[0]->ad_no}} </h6>
+			<h6 class="nepali_td">पद: {{$intro_data[0]->designation}} </h6>
+			<h6 class="nepali_td" style="margin-top: -25px;margin-left:50%">तह: {{$intro_data[0]->work_level}}</h6>
+			<h6 class="nepali_td">पद संख्या: {{$intro_data[0]->total_req_seats}} </h6>
+		</div>
+		<div class='panel-footer'>
+			<p class="nepali_td">आन्तरिक प्रतियोगितात्मक तर्फका उम्मेदवारहरुको अस्वीकृत नामावली</p>
+		</div>
+	</div>
+</header>
+
+<div class="box box-solid box-primary" style="overflow-x:auto;">
+	<table class="table-responsive table-striped table-bordered table nepali_td" id="candidates">
+		<thead>
+			<tr>
+				<th rowspan="2">S.N.</th>
+				<th rowspan="2">Applicant ID</th>
+				<th rowspan="2">Nt Staff Code</th>
+				<th rowspan="2" class="nepali_td">नाम</th>
+				<th rowspan="2">Name</th>
+        <th colspan="2"></th>
+				<th rowspan="2">Gender</th>
+				<th rowspan="2" class="nepali_td">Father/ Mother</th>
+				<th rowspan="2" class="nepali_td">बुबा / आमा</th>
+				<th rowspan="2">GranFather</th>
+				<th rowspan="2" class="nepali_td">बाजे</th>
+				<th rowspan="2">Current Designation</th>
+				<th rowspan="2">Work Level</th>
+				<th rowspan="2">Seniority Date (B.S)</th>
+				<th rowspan="2" class="nepali_td">योग्यता</th>
+				<th rowspan="2">Token No.</th>
+				<th rowspan="2">Total Amount</th>
+				<th rowspan="2">Paid Amount</th>
+				<th rowspan="2">Receipt no</th>
+				<th rowspan="2">Paid Date(AD)</th>
+				<th rowspan="2">Rejected Date</th>
+				<th rowspan="2">Reject Reason</th>
+				<th rowspan="2">Email</th>
+				<th rowspan="2">Mobile</th>
+				<th rowspan="2">Remarks</th>
+			</tr>
+
+
+			<tr>
+				<th>D.O.B.</th>
+				<th>Address</th>
+			</tr>
+
+		</thead>
+		<tbody>
+			@if($candidate_data)
+       @foreach ($candidate_data as $value)
+			 <tr>
+				<td>{{$loop->iteration}}</td>
+				<td>{{$value->ap_id}}</td>
+				<td>{{$value->nt_staff_code}}</td>
+
+				<td class="nepali_td">{{$value->applicant_name_np}}</td>
+				<td>{{$value->applicant_name_en}}</td>
+				<td>{{$value->date_of_birth}}</td>
+				<td>{{$value->address}}</td>
+				<td>{{$value->gender}}</td>
+				<td class="nepali_td">{{$value->father_mother}}</td>
+				<td class="nepali_td">{{$value->father_mother_np}}</td>
+				<td class="nepali_td">{{$value->grand_father}}</td>
+				<td class="nepali_td">{{$value->grand_father_np}}</td>
+				<td>{{$value->current_designation}}</td>
+				<td>{{$value->work_level}}</td>
+				<td>{{$value->seniority_date_bs}}</td>
+        <td>
+  			@foreach($candidate_education_data[$value->ap_id] as $key=>$ap_edu_data)
+  				@php
+  				// $merged_data=$ap_edu_data->edu_level.'/'.$ap_edu_data->edu_degree.'/'.$ap_edu_data->edu_major;
+					$merged_data=$ap_edu_data->edu_degree;
+  				$applicant_edu_data[]=	$merged_data;	
+  				// echo nl2br('('.$merged_data.')'."\n");
+  				echo nl2br($merged_data."\n");
+  				@endphp
+  			@endforeach 
+  		</td>
+        <td>{{($value->token_number)?$value->token_number:'NA'}}</td>
+        <td>{{($value->total_amount)?$value->total_amount:'NA'}}</td>
+        <td>{{($value->total_paid_amount)?$value->total_paid_amount:'NA'}}</td>
+				<td>{{$value->paid_receipt_no}}</td>
+        <td>{{($value->paid_date_ad)?$value->paid_date_ad:'NA'}}</td>
+				<td>{{$value->rejected_date_ad}}<br>{{$value->rejected_date_bs}}</td>
+				<td>{{$value->rejected_reason}}</td>
+        <td>{{($value->email)?$value->email:'NA'}}</td>
+        <td>{{($value->mobile)?$value->mobile:'NA'}}</td>
+				<td></td>
+			</tr>
+			<?php $count++;
+					   ?>
+			@endforeach
+     @endif
+		</tbody>
+	</table>
+</div>
+
+@endsection

@@ -1,0 +1,250 @@
+@extends('layouts.applicant_admin_template')
+@section('content')
+<div>
+    <x-applicant-tabs :component_name="$page_title" :checkNtStaff="$isNtStaff"></x-applicant-tabs>
+    <div class="panel-body" style="padding:20px 0px 0px 0px">
+      @if($index_statistic)
+      <div id='box-statistic' class='row'>
+      @foreach($index_statistic as $stat)
+          <div  class="{{ ($stat['width'])?:'col-sm-3' }}">
+              <div class="small-box bg-{{ $stat['color']?:'red' }}">
+                <div class="inner">
+                  <h3>{{ $stat['count'] }}</h3>
+                  <p>{{ $stat['label'] }}</p>
+                </div>
+                <div class="icon">
+                  <i class="{{ $stat['icon'] }}"></i>
+                </div>
+              </div>
+          </div>
+      @endforeach
+      </div>
+    @endif
+
+   @if(!is_null($pre_index_html) && !empty($pre_index_html))
+       {!! $pre_index_html !!}
+   @endif
+
+    @if($parent_table)
+    <div class="box box-default">
+      <div class="box-body table-responsive no-padding">
+        <table class='table table-bordered'>
+          <tbody>
+            <tr class='active'>
+              <td colspan="2"><strong><i class='fa fa-bars'></i> {{ ucwords(urldecode(g('label'))) }}</strong></td>
+            </tr>
+            @foreach(explode(',',urldecode(g('parent_columns'))) as $c)
+            <tr>
+              <td width="25%"><strong>
+               @if(urldecode(g('parent_columns_alias')))
+              {{explode(',',urldecode(g('parent_columns_alias')))[$loop->index]}}
+              @else
+              {{  ucwords(str_replace('_',' ',$c)) }}
+               @endif
+              </strong></td><td> {{ $parent_table->$c }}</td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+    @endif
+
+    <div class="box">
+        <div class="box-header">
+        @if($isApplicant!='true')
+        @if($page_title=='Applicant Service History')
+        <a href="export_service_history/{{$va_id}}" target="_blank"><button type="button" class="btn btn-primary">Export Service History</button></a>
+        @endif
+        @endif
+            @if($isApplicant=='true')
+              @if($table!="applicant_training_info")
+
+            <a href="{{CRUDBooster::adminPath()}}/{{$table}}/add" id="btn_add_new_data" class="btn btn-sm btn-success" title="Add Data">
+                <i class="fa fa-plus-circle"></i> Add Data
+            </a>
+            @else
+            <a href="{{CRUDBooster::adminPath()}}/user_training_info/add" id="btn_add_new_data" class="btn btn-sm btn-success" title="Add Data">
+                <i class="fa fa-plus-circle"></i> Add Data
+            </a>
+            @endif
+            @endif
+            <br style="clear:both"/>
+        </div>
+        <div class="box-body table-responsive no-padding">
+            @include("crudbooster::default.table")
+        </div>
+    </div>
+
+   @if(!is_null($post_index_html) && !empty($post_index_html))
+       {!! $post_index_html !!}
+   @endif
+
+    </div>
+  </div>
+</div>
+<style>
+    td.notmatched{
+        font-weight:bold;
+        color:darkred;
+    }
+</style>
+@if(CRUDBooster::myPrivilegeId()==1 || CRUDBooster::myPrivilegeId()==5 || CRUDBooster::myPrivilegeId()==3) 
+
+
+@if($erp_data)
+
+<!--END AUTO MARGIN-->
+
+<!-- erp data div -->
+<div class="box box-default">
+<div class="box-body table-responsive no-padding">
+  <h4 align="center" style="color: saddlebrown;font-weight: bolder;">ERP Data</h3>
+  
+  <table id="table_dashboard" class="table table-hover table-striped table-bordered">
+                    <thead style="color:  rebeccapurple;">
+                    <tr class="active">
+                     <th width="1%">No.</th>
+                     <th width="auto">Level </th>
+                     <th width="auto">Degree </th>
+                     <!-- <th width="auto">Major</th> -->
+                     <th width="auto">Division </th>
+                     <th width="auto">Passed Year </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                  
+                    @foreach($erp_data as $key => $erp_data)
+                      <tr>
+                        <td>{{$i++}} </td>
+                        <td>{{$erp_data->education_level}}</td>
+                        <td>{{$erp_data->education_degree}}</td>
+                        <!-- <td>{{$erp_data->education_major}}</td> -->
+                        <td>{{$erp_data->division}}</td>
+                        <td>{{$erp_data->passed_year_bs}}</td>
+                    </tr>
+                   
+                    @endforeach
+                    </tbody>
+                   
+                  </table>
+  </div>
+</div>
+
+@if(count($merged_data)>0)
+<!-- merged data div -->
+<div class="box box-default">
+<div class="box-body table-responsive no-padding table-editable">
+@if($merged_data[0]->is_approved==0)
+<div class="align-left" align="right">
+<button class="btn btn-primary" style="margin:5px;margin-bottom:-32px"><a href="remerge_education_data/{{$id}}/{{$va_id}}"  onclick="return confirm('Are you sure to remerged data?')" style="color:white">Remerge</a></button>
+</div>
+@endif
+  <h4 align="center" style="color: saddlebrown;font-weight: bolder;">Merged Data</h3>
+  
+  <table id="table_dashboard" class="table table-hover table-striped table-bordered">
+                    <thead style="color:  rebeccapurple;">
+                    <tr class="active">
+                    <th width="1%">No.</th>
+                     <th width="auto">Level </th>
+                     <th width="auto">Degree </th>
+                     <!-- <th width="auto">Major</th> -->
+                     <th width="auto">Division </th>
+                     <th width="auto">Passed Year </th>
+                     <th width="auto">Action </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                   
+                   
+                    @foreach($merged_data as $key => $merged_data)
+                    @if($merged_data->flag=="mistakes")
+                      <tr style="background:burlywood">
+                      @elseif($merged_data->flag=="correct")
+                      <tr style="background:yellowgreen">
+                      @elseif($merged_data->flag=="only_in_erp")
+                      <tr style="background:rosybrown">
+                      @else
+                      <tr style="background:cadetblue">
+                      @endif 
+                      <td>{{$i++}} </td>
+                        <td style="color:{{strpos($merged_data->mismatched_key, 'education_level') !== false?'darkred':''}}">{{$merged_data->education_level}}</td>
+                        <td style="color:{{strpos($merged_data->mismatched_key, 'education_degree') !== false?'darkred':''}}">{{$merged_data->education_degree}}</td>
+                        <!-- <td style="color:{{strpos($merged_data->mismatched_key, 'education_major') !== false?'darkred':''}}">{{$merged_data->education_major}}</td> -->
+                        <td style="color:{{strpos($merged_data->mismatched_key, 'division') !== false?'darkred':''}}">{{$merged_data->division}}</td>
+                        <td style="color:{{strpos($merged_data->mismatched_key, 'passed_year_bs') !== false?'darkred':''}}">{{$merged_data->passed_year_bs}}</td>
+                        <td>
+                        @if($merged_data->is_approved==0)
+                        <a class="btn btn-xs btn-success btn-edit" title="Edit Data" href="/app/merged_data_education/edit/{{$merged_data->id}}">
+                        <i class="fa fa-pencil"></i></a>
+                        
+                        @endif
+                        @if($merged_data->is_approved==0)
+                        <a class="btn btn-xs btn-danger" title="Delete Data" href="/app/merged_data_education/delete/{{$merged_data->id}}" onclick="return confirm('Are you sure to Delete merged data?')" >
+                        <i class="fa fa-trash-o"></i></a>
+                        
+                        @endif
+                        </td>
+                    </tr>
+                   
+                    @endforeach
+                    </tbody>
+                   
+                  </table>
+  
+    <div>
+        <div class="col-xs-2">
+        <div class="foo matched"></div> <h5 style="margin-left:30px;margin-top:-23px">Matched</h5>
+        </div>
+        <div class="col-xs-2">
+        <div class="foo mistakes"></div> <h5 style="margin-left:30px;margin-top:-23px">Mismatched</h5>
+        </div>
+        <div class="col-xs-2">
+        <div class="foo only_in_erp"></div> <h5 style="margin-left:30px;margin-top:-23px">Only In ERP</h5>
+        </div>
+        <div class="col-xs-2">
+        <div class="foo missing_in_erp"></div> <h5 style="margin-left:30px;margin-top:-23px">Missing in ERP</h5>
+        </div>
+    </div>
+    @if($merged_data->is_verified==0)
+    <div align="right" style="margin: 10px;">
+    <button class="btn btn-info"><a href="{{route('AdminMergedEducationDataControllerGetVerify',['id'=>$id,'va_id'=>$va_id])}}"  onclick="return confirm('Are you sure to verify merged data?')" style="color:white">Verify</a></button>
+    </div>
+    @endif
+    @if($merged_data->is_verified==1 && $merged_data->is_approved==0 )
+    <div align="right" style="margin: 10px;">
+      <button class="btn btn-info"><a href="{{route('AdminMergedEducationDataControllerGetApprove',['id'=>$id,'va_id'=>$va_id])}}"  onclick="return confirm('Are you sure to approve merged data?')" style="color:white">Approve</a></button>
+    </div>
+    @endif
+  </div>
+  
+</div>
+@if($merged_data->is_verified==1)
+    <div class="box-body table-responsive no-padding">
+    <table id="table_dashboard" class="table table-hover table-striped table-bordered">
+                    <thead style="color:  rebeccapurple;">
+                    <tr class="active">
+                     <th width="auto">Verified by</th>
+                     <th width="auto">Verified on </th>
+                     <th width="auto">Approved by </th>
+                     <th width="auto">Approved on</th>
+                    </tr>
+                    </thead>
+                    <?php $i=1; ?>  
+                    <tbody>
+                    </tbody>
+                    <tr>
+                    <td>{{$merged_data->verified_by}}</td>
+                    <td>{{$merged_data->verified_on}}</td>
+                    <td>{{$merged_data->approved_by}}</td>
+                    <td>{{$merged_data->approved_on}}</td>
+                    </tr>
+    </table>
+    </div>
+@endif
+@endif
+@endif
+@endif
+@endsection

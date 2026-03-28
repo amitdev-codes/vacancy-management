@@ -1,0 +1,28 @@
+.closebtn {
+    margin-left: 15px;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+a.forgotPsw {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a.forgotPsw:hover {
+    color: #9ebef9;
+    /* font-size: 16px; */
+    text-decoration: none;
+}
+
+.panel-default {
+    margin-bottom: 10px !important;
+}

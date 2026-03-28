@@ -1,0 +1,125 @@
+body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar {
+    margin-top: -2px;
+}
+
+body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .sidebar {
+    margin-top: 0;
+}
+
+.layout-navbar-fixed.text-sm .wrapper .content-wrapper {
+    margin-top: 68px;
+}
+
+header {
+    height: 67px;
+    position: fixed;
+    max-height: 67px;
+    z-index: 1050;
+}
+
+.logo {
+    transition: width .3s ease-in-out;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    width: 230px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0 5px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.card-details label {
+    font-size: 14px;
+}
+
+.nepal-logo {
+    width: 65px;
+    height: 54px;
+}
+
+.tab-title {
+    font-size: 17px;
+}
+
+.main-header .navbar-nav .nav-item .bar-shadow {
+    box-shadow: 0px 2px 5px #41863a;
+}
+
+.navbar-light .navbar-nav .bar-shadow:hover {
+    background: #2f7528;
+}
+
+.main-header .navbar-nav .nav-item .bar-shadow1 {
+    box-shadow: 0px 1px 5px #777777;
+}
+
+.navbar-light .navbar-nav .bar-shadow1:hover {
+    background: #464646;
+}
+
+.main-sidebar,
+.main-sidebar::before {
+    width: 234px;
+}
+
+.main-sidebar {
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    body:not(.sidebar-mini-md) .main-header {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 0px;
+    }
+
+    /*  body:not(.sidebar-mini-md) .content-wrapper{
+    margin-left: 234px;
+  }*/
+}
+
+@media (min-width: 992px) {
+
+    .sidebar-mini.sidebar-collapse .main-footer,
+    .sidebar-mini.sidebar-collapse .main-header {
+        margin-left: 0rem !important;
+    }
+
+    .sidebar-mini.sidebar-collapse .brand-text,
+    .nav-sidebar .nav-link p,
+    .sidebar .user-panel>.info {
+        margin-left: 0px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.card-details .table thead th,
+.dataTables_wrapper .table thead th,
+.table thead th,
+.card-details .table td,
+.dataTables_wrapper .table td,
+.table td {
+    font-size: 14px !important;
+}
+
+.nav-link .fa {
+    margin-right: 3px;
+}
+
+.card-header-tabs {
+    font-size: 15px;
+}
+
+/*.main-sidebar{position: absolute !important;    z-index: 1030;}*/
+@media screen and (max-width: 768px) {
+    .nav {
+        display: block !important;
+    }
+
+    .nav-tabs .nav-item {
+        margin-bottom: 1px;
+    }
+}

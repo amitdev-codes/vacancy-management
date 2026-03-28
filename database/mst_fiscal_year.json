@@ -1,0 +1,685 @@
+[{
+        "id": "1",
+        "code": "1997/1998",
+        "date_from_bs": "1997-04-01",
+        "date_to_bs": "1998/03/32",
+        "date_from_ad": "1940/7/16",
+        "date_to_ad": "1941/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "2",
+        "code": "1998/1999",
+        "date_from_bs": "1998-04-01",
+        "date_to_bs": "1999/03/32",
+        "date_from_ad": "1941/7/16",
+        "date_to_ad": "1942/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "3",
+        "code": "1999/2000",
+        "date_from_bs": "1999-04-01",
+        "date_to_bs": "2000-03-31",
+        "date_from_ad": "1942/7/16",
+        "date_to_ad": "1943/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "4",
+        "code": "2000/2001",
+        "date_from_bs": "2000-04-01",
+        "date_to_bs": "2001-03-31",
+        "date_from_ad": "1943/7/16",
+        "date_to_ad": "1944/7/14",
+        "is_current": "0"
+    },
+    {
+        "id": "5",
+        "code": "2001/2002",
+        "date_from_bs": "2001-04-01",
+        "date_to_bs": "2002/03/32",
+        "date_from_ad": "1944/7/15",
+        "date_to_ad": "1945/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "6",
+        "code": "2002/2003",
+        "date_from_bs": "2002-04-01",
+        "date_to_bs": "2003-03-31",
+        "date_from_ad": "1945/7/16",
+        "date_to_ad": "1946/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "7",
+        "code": "2003/2004",
+        "date_from_bs": "2003-04-01",
+        "date_to_bs": "2004/03/32",
+        "date_from_ad": "1946/7/16",
+        "date_to_ad": "1947/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "8",
+        "code": "2004/2005",
+        "date_from_bs": "2004-04-01",
+        "date_to_bs": "2005/03/32",
+        "date_from_ad": "1947/7/16",
+        "date_to_ad": "1948/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "9",
+        "code": "2005/2006",
+        "date_from_bs": "2005-04-01",
+        "date_to_bs": "2006/03/32",
+        "date_from_ad": "1948/7/16",
+        "date_to_ad": "1949/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "10",
+        "code": "2006/2007",
+        "date_from_bs": "2006-04-01",
+        "date_to_bs": "2007-03-31",
+        "date_from_ad": "1949/7/16",
+        "date_to_ad": "1950/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "11",
+        "code": "2007/2008",
+        "date_from_bs": "2007-04-01",
+        "date_to_bs": "2008-03-31",
+        "date_from_ad": "1950/7/16",
+        "date_to_ad": "1951/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "12",
+        "code": "2008/2009",
+        "date_from_bs": "2008-04-01",
+        "date_to_bs": "2009/03/32",
+        "date_from_ad": "1951/7/16",
+        "date_to_ad": "1952/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "13",
+        "code": "2009/2010",
+        "date_from_bs": "2009-04-01",
+        "date_to_bs": "2010/03/32",
+        "date_from_ad": "1952/7/16",
+        "date_to_ad": "1953/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "14",
+        "code": "2010/2011",
+        "date_from_bs": "2010-04-01",
+        "date_to_bs": "2011-03-31",
+        "date_from_ad": "1953/7/16",
+        "date_to_ad": "1954/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "15",
+        "code": "2011/2012",
+        "date_from_bs": "2011-04-01",
+        "date_to_bs": "2012-03-31",
+        "date_from_ad": "1954/7/16",
+        "date_to_ad": "1955/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "16",
+        "code": "2012/2013",
+        "date_from_bs": "2012-04-01",
+        "date_to_bs": "2013/03/32",
+        "date_from_ad": "1955/7/16",
+        "date_to_ad": "1956/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "17",
+        "code": "2013/2014",
+        "date_from_bs": "2013-04-01",
+        "date_to_bs": "2014/03/32",
+        "date_from_ad": "1956/7/16",
+        "date_to_ad": "1957/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "18",
+        "code": "2014/2015",
+        "date_from_bs": "2014-04-01",
+        "date_to_bs": "2015-03-31",
+        "date_from_ad": "1957/7/16",
+        "date_to_ad": "1958/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "19",
+        "code": "2015/2016",
+        "date_from_bs": "2015-04-01",
+        "date_to_bs": "2016-03-31",
+        "date_from_ad": "1958/7/16",
+        "date_to_ad": "1959/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "20",
+        "code": "2016/2017",
+        "date_from_bs": "2016-04-01",
+        "date_to_bs": "2017/03/32",
+        "date_from_ad": "1959/7/16",
+        "date_to_ad": "1960/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "21",
+        "code": "2017/2018",
+        "date_from_bs": "2017-04-01",
+        "date_to_bs": "2018-03-31",
+        "date_from_ad": "1960/7/16",
+        "date_to_ad": "1961/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "22",
+        "code": "2018/2019",
+        "date_from_bs": "2018-04-01",
+        "date_to_bs": "2019-03-31",
+        "date_from_ad": "1961/7/16",
+        "date_to_ad": "1962/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "23",
+        "code": "2019/2020",
+        "date_from_bs": "2019-04-01",
+        "date_to_bs": "2020-03-31",
+        "date_from_ad": "1962/7/16",
+        "date_to_ad": "1963/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "24",
+        "code": "2020/2021",
+        "date_from_bs": "2020-04-01",
+        "date_to_bs": "2021/03/32",
+        "date_from_ad": "1963/7/16",
+        "date_to_ad": "1964/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "25",
+        "code": "2021/2022",
+        "date_from_bs": "2021-04-01",
+        "date_to_bs": "2022-03-31",
+        "date_from_ad": "1964/7/16",
+        "date_to_ad": "1965/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "26",
+        "code": "2022/2023",
+        "date_from_bs": "2022-04-01",
+        "date_to_bs": "2023-03-31",
+        "date_from_ad": "1965/7/16",
+        "date_to_ad": "1966/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "27",
+        "code": "2023/2024",
+        "date_from_bs": "2023-04-01",
+        "date_to_bs": "2024-03-31",
+        "date_from_ad": "1966/7/16",
+        "date_to_ad": "1967/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "28",
+        "code": "2024/2025",
+        "date_from_bs": "2024-04-01",
+        "date_to_bs": "2025/03/32",
+        "date_from_ad": "1967/7/16",
+        "date_to_ad": "1968/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "29",
+        "code": "2025/2026",
+        "date_from_bs": "2025-04-01",
+        "date_to_bs": "2026-03-31",
+        "date_from_ad": "1968/7/16",
+        "date_to_ad": "1969/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "30",
+        "code": "2026/2027",
+        "date_from_bs": "2026-04-01",
+        "date_to_bs": "2027-03-31",
+        "date_from_ad": "1969/7/16",
+        "date_to_ad": "1970/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "31",
+        "code": "2027/2028",
+        "date_from_bs": "2027-04-01",
+        "date_to_bs": "2028/03/32",
+        "date_from_ad": "1970/7/16",
+        "date_to_ad": "1971/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "32",
+        "code": "2028/2029",
+        "date_from_bs": "2028-04-01",
+        "date_to_bs": "2029/03/32",
+        "date_from_ad": "1971/7/17",
+        "date_to_ad": "1972/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "33",
+        "code": "2029/2030",
+        "date_from_bs": "2029-04-01",
+        "date_to_bs": "2030-03-31",
+        "date_from_ad": "1972/7/16",
+        "date_to_ad": "1973/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "34",
+        "code": "2030/2031",
+        "date_from_bs": "2030-04-01",
+        "date_to_bs": "2031-03-31",
+        "date_from_ad": "1973/7/16",
+        "date_to_ad": "1974/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "35",
+        "code": "2031/2032",
+        "date_from_bs": "2031-04-01",
+        "date_to_bs": "2032/03/32",
+        "date_from_ad": "1974/7/16",
+        "date_to_ad": "1975/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "36",
+        "code": "2032/2033",
+        "date_from_bs": "2032-04-01",
+        "date_to_bs": "2033/03/32",
+        "date_from_ad": "1975/7/17",
+        "date_to_ad": "1976/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "37",
+        "code": "2033/2034",
+        "date_from_bs": "2033-04-01",
+        "date_to_bs": "2034-03-31",
+        "date_from_ad": "1976/7/16",
+        "date_to_ad": "1977/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "38",
+        "code": "2034/2035",
+        "date_from_bs": "2034-04-01",
+        "date_to_bs": "2035-03-31",
+        "date_from_ad": "1977/7/16",
+        "date_to_ad": "1978/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "39",
+        "code": "2035/2036",
+        "date_from_bs": "2035-04-01",
+        "date_to_bs": "2036/03/32",
+        "date_from_ad": "1978/7/16",
+        "date_to_ad": "1979/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "40",
+        "code": "2036/2037",
+        "date_from_bs": "2036-04-01",
+        "date_to_bs": "2037/03/32",
+        "date_from_ad": "1979/7/17",
+        "date_to_ad": "1980/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "41",
+        "code": "2037/2038",
+        "date_from_bs": "2037-04-01",
+        "date_to_bs": "2038-03-31",
+        "date_from_ad": "1980/7/16",
+        "date_to_ad": "1981/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "42",
+        "code": "2038/2039",
+        "date_from_bs": "2038-04-01",
+        "date_to_bs": "2039-03-31",
+        "date_from_ad": "1981/7/16",
+        "date_to_ad": "1982/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "43",
+        "code": "2039/2040",
+        "date_from_bs": "2039-04-01",
+        "date_to_bs": "2040/03/32",
+        "date_from_ad": "1982/7/16",
+        "date_to_ad": "1983/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "44",
+        "code": "2040/2041",
+        "date_from_bs": "2040-04-01",
+        "date_to_bs": "2041/03/32",
+        "date_from_ad": "1983/7/17",
+        "date_to_ad": "1984/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "45",
+        "code": "2041/2042",
+        "date_from_bs": "2041-04-01",
+        "date_to_bs": "2042-03-31",
+        "date_from_ad": "1984/7/16",
+        "date_to_ad": "1985/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "46",
+        "code": "2042/2043",
+        "date_from_bs": "2042-04-01",
+        "date_to_bs": "2043-03-31",
+        "date_from_ad": "1985/7/16",
+        "date_to_ad": "1986/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "47",
+        "code": "2043/2044",
+        "date_from_bs": "2043-04-01",
+        "date_to_bs": "2044/03/32",
+        "date_from_ad": "1986/7/16",
+        "date_to_ad": "1987/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "48",
+        "code": "2044/2045",
+        "date_from_bs": "2044-04-01",
+        "date_to_bs": "2045-03-31",
+        "date_from_ad": "1987/7/17",
+        "date_to_ad": "1988/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "49",
+        "code": "2045/2046",
+        "date_from_bs": "2045-04-01",
+        "date_to_bs": "2046-03-31",
+        "date_from_ad": "1988/7/16",
+        "date_to_ad": "1989/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "50",
+        "code": "2046/2047",
+        "date_from_bs": "2046-04-01",
+        "date_to_bs": "2047-03-31",
+        "date_from_ad": "1989/7/16",
+        "date_to_ad": "1990/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "51",
+        "code": "2047/2048",
+        "date_from_bs": "2047-04-01",
+        "date_to_bs": "2048/03/32",
+        "date_from_ad": "1990/7/16",
+        "date_to_ad": "1991/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "52",
+        "code": "2048/2049",
+        "date_from_bs": "2048-04-01",
+        "date_to_bs": "2049-03-31",
+        "date_from_ad": "1991/7/17",
+        "date_to_ad": "1992/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "53",
+        "code": "2049/2050",
+        "date_from_bs": "2049-04-01",
+        "date_to_bs": "2050-03-31",
+        "date_from_ad": "1992/7/16",
+        "date_to_ad": "1993/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "54",
+        "code": "2050/2051",
+        "date_from_bs": "2050-04-01",
+        "date_to_bs": "2051-03-31",
+        "date_from_ad": "1993/7/16",
+        "date_to_ad": "1994/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "55",
+        "code": "2051/2052",
+        "date_from_bs": "2051-04-01",
+        "date_to_bs": "2052/03/32",
+        "date_from_ad": "1994/7/16",
+        "date_to_ad": "1995/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "56",
+        "code": "2052/2053",
+        "date_from_bs": "2052-04-01",
+        "date_to_bs": "2053-03-31",
+        "date_from_ad": "1995/7/17",
+        "date_to_ad": "1996/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "57",
+        "code": "2053/2054",
+        "date_from_bs": "2053-04-01",
+        "date_to_bs": "2054-03-31",
+        "date_from_ad": "1996/7/16",
+        "date_to_ad": "1997/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "58",
+        "code": "2054/2055",
+        "date_from_bs": "2054-04-01",
+        "date_to_bs": "2055/03/32",
+        "date_from_ad": "1997/7/16",
+        "date_to_ad": "1998/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "59",
+        "code": "2055/2056",
+        "date_from_bs": "2055-04-01",
+        "date_to_bs": "2056/03/32",
+        "date_from_ad": "1998/7/17",
+        "date_to_ad": "1999/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "60",
+        "code": "2056/2057",
+        "date_from_bs": "2056-04-01",
+        "date_to_bs": "2057-03-31",
+        "date_from_ad": "1999/7/17",
+        "date_to_ad": "2000/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "61",
+        "code": "2057/2058",
+        "date_from_bs": "2057-04-01",
+        "date_to_bs": "2058-03-31",
+        "date_from_ad": "2000/7/16",
+        "date_to_ad": "2001/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "62",
+        "code": "2058/2059",
+        "date_from_bs": "2058-04-01",
+        "date_to_bs": "2059/03/32",
+        "date_from_ad": "2001/7/16",
+        "date_to_ad": "2002/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "63",
+        "code": "2059/2060",
+        "date_from_bs": "2059-04-01",
+        "date_to_bs": "2060/03/32",
+        "date_from_ad": "2002/7/17",
+        "date_to_ad": "2003/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "64",
+        "code": "2060/2061",
+        "date_from_bs": "2060-04-01",
+        "date_to_bs": "2061-03-31",
+        "date_from_ad": "2003/7/17",
+        "date_to_ad": "2004/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "65",
+        "code": "2061/2062",
+        "date_from_bs": "2061-04-01",
+        "date_to_bs": "2062-03-31",
+        "date_from_ad": "2004/7/16",
+        "date_to_ad": "2005/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "66",
+        "code": "2062/2063",
+        "date_from_bs": "2062-04-01",
+        "date_to_bs": "2063-03-31",
+        "date_from_ad": "2005/7/16",
+        "date_to_ad": "2006/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "67",
+        "code": "2063/2064",
+        "date_from_bs": "2063-04-01",
+        "date_to_bs": "2064/03/32",
+        "date_from_ad": "2006/7/17",
+        "date_to_ad": "2007/7/16",
+        "is_current": "0"
+    },
+    {
+        "id": "68",
+        "code": "2064/2065",
+        "date_from_bs": "2064-04-01",
+        "date_to_bs": "2065-03-31",
+        "date_from_ad": "2007/7/17",
+        "date_to_ad": "2008/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "69",
+        "code": "2065/2066",
+        "date_from_bs": "2065-04-01",
+        "date_to_bs": "2066-03-31",
+        "date_from_ad": "2008/7/16",
+        "date_to_ad": "2009/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "70",
+        "code": "2066/2067",
+        "date_from_bs": "2066-04-01",
+        "date_to_bs": "2067-03-31",
+        "date_from_ad": "2009/7/16",
+        "date_to_ad": "2010/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "71",
+        "code": "2067/2068",
+        "date_from_bs": "2067-04-01",
+        "date_to_bs": "2068-03-31",
+        "date_from_ad": "2010/7/17",
+        "date_to_ad": "2011/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "72",
+        "code": "2068/2069",
+        "date_from_bs": "2068-04-01",
+        "date_to_bs": "2069/03/32",
+        "date_from_ad": "2011/7/17",
+        "date_to_ad": "2012/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "73",
+        "code": "2069/2070",
+        "date_from_bs": "2069-04-01",
+        "date_to_bs": "2070-03-31",
+        "date_from_ad": "2012/7/16",
+        "date_to_ad": "2013/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "74",
+        "code": "2070/2071",
+        "date_from_bs": "2070-04-01",
+        "date_to_bs": "2071-03-31",
+        "date_from_ad": "2013/7/16",
+        "date_to_ad": "2014/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "75",
+        "code": "2071/2072",
+        "date_from_bs": "2071-04-01",
+        "date_to_bs": "2072-03-31",
+        "date_from_ad": "2014/7/16",
+        "date_to_ad": "2015/7/15",
+        "is_current": "0"
+    },
+    {
+        "id": "76",
+        "code": "2072/2073",
+        "date_from_bs": "2072-04-01",
+        "date_to_bs": "2073-03-31",
+        "date_from_ad": "2015/7/17",
+        "date_to_ad": "2016/7/15",
+        "is_current": "1"
+    }
+]
